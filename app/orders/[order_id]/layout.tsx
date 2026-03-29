@@ -1,9 +1,5 @@
-import { Inter } from 'next/font/google'
+import { inter } from '@/app/lib/fonts';
 
-export const inter = Inter({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
 
 export default function RootLayout({
     children,

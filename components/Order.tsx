@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
-import { nunitoSans } from "@/app/layout"
 import { formatDate } from "@/app/utils/date.formater"
+import { nunitoSans } from "@/app/lib/fonts"
 
 
 type OrderCardProps = {

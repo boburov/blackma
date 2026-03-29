@@ -2,6 +2,7 @@ import { Pen } from "lucide-react";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Select from "../ui/Select";
+import Image from "next/image";
 
 export default function UpdateProfileInfoFunction() {
   return (
@@ -14,7 +15,7 @@ export default function UpdateProfileInfoFunction() {
           <span className="bg-blue-500 absolute text-white p-2 rounded-full border-2 border-white top-0 right-0">
             <Pen size={16} />
           </span>
-          <img
+          <Image
             src="https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg"
             alt="profile pic"
             className="w-full h-full object-cover aspect-square rounded-full"

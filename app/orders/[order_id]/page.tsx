@@ -5,11 +5,11 @@ import { useRouter } from "next/navigation"
 import { ChevronLeft } from "lucide-react"
 import ProductCard from "@/components/ProductCard"
 import { products } from "../../data/products"
-import { inter } from "./layout"
 import { SectionCard } from "@/components/SectionCard"
 import { PAYMENT_METHODS, PaymentMethodId } from "@/@types/payment.method.types"
 import { InfoRow } from "@/components/InfoRow"
 import { PaymentMethodOption } from "@/components/PaymentMethon"
+import { inter } from "@/app/lib/fonts"
 
 const ITEMS_PER_PAGE = 2
 

@@ -1,4 +1,4 @@
-import { nunitoSans } from "@/app/layout"
+import { nunitoSans } from "@/app/lib/fonts"
 import { LoginFormCard } from "@/components/LoginForm"
 
 const LoginPage = () => {

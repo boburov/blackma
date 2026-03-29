@@ -1,8 +1,8 @@
 import { orders } from "./data/orders"
-import { inter } from "./orders/[order_id]/layout"
 import Order from "@/components/Order"
 import { calculateOrderPrice } from "./utils/order.price.calculator"
 import BottomNavigation from "@/components/BottomNavigation"
+import { inter } from "./lib/fonts"
 
 const page = () => {
   return (
