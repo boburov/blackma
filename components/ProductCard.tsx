@@ -1,8 +1,14 @@
-import Image, { StaticImageData } from "next/image"
-import { Ruler, Palette, Clock, Truck, CheckCircle, XCircle } from "lucide-react"
-import { Badge } from "./Badge"
-import { ProductCardProps } from "@/@types/product_card_type"
-
+import Image, { StaticImageData } from "next/image";
+import {
+  Ruler,
+  Palette,
+  Clock,
+  Truck,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import { Badge } from "./Badge";
+import { ProductCardProps } from "@/@types/product_card_type";
 
 const statusConfig = {
   pending: {
@@ -25,7 +31,7 @@ const statusConfig = {
     icon: XCircle,
     className: "bg-red-50 text-red-700",
   },
-}
+};
 
 export default function ProductCard({
   imageSrc,
@@ -38,12 +44,11 @@ export default function ProductCard({
   status,
   onRemove,
 }: ProductCardProps) {
-  const st = status ? statusConfig[status] : null
-  const StatusIcon = st?.icon
+  const st = status ? statusConfig[status] : null;
+  const StatusIcon = st?.icon;
 
   return (
     <article className="flex items-center gap-3 p-3 rounded-2xl border bg-white hover:shadow-md transition w-full">
-
       {/* Image */}
       <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 shrink-0">
         <Image
@@ -56,7 +61,6 @@ export default function ProductCard({
 
       {/* Content */}
       <div className="flex flex-col flex-1 min-w-0 gap-1.5">
-
         {/* Title */}
         <h3 className="text-sm font-semibold text-gray-900 truncate">
           {productName}
@@ -80,7 +84,6 @@ export default function ProductCard({
 
         {/* Footer */}
         <div className="flex items-center justify-between mt-1">
-
           {/* Price */}
           <div className="flex items-center gap-1">
             {price !== undefined && (
@@ -116,5 +119,5 @@ export default function ProductCard({
         </button>
       )}
     </article>
-  )
+  );
 }

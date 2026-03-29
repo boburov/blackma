@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Eye, EyeOff, Lock, User } from "lucide-react"
+import { useState } from "react";
+import { Eye, EyeOff, Lock, User } from "lucide-react";
 
 type FormFieldProps = {
-  name: string
-  label: string
-  placeholder: string
-  type: "text" | "password"
-  value: string
-  onChange: (value: string) => void
-}
+  name: string;
+  label: string;
+  placeholder: string;
+  type: "text" | "password";
+  value: string;
+  onChange: (value: string) => void;
+};
 
 const fieldIcon = (type: "text" | "password") =>
-  type === "password" ? Lock : User
+  type === "password" ? Lock : User;
 
 export const FormField = ({
   name,
@@ -23,9 +23,9 @@ export const FormField = ({
   value,
   onChange,
 }: FormFieldProps) => {
-  const [visible, setVisible] = useState(false)
-  const Icon = fieldIcon(type)
-  const inputType = type === "password" && !visible ? "password" : "text"
+  const [visible, setVisible] = useState(false);
+  const Icon = fieldIcon(type);
+  const inputType = type === "password" && !visible ? "password" : "text";
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -52,10 +52,14 @@ export const FormField = ({
             onClick={() => setVisible((v) => !v)}
             className="text-gray-400 hover:text-gray-600 transition-colors"
           >
-            {visible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+            {visible ? (
+              <EyeOff className="w-4 h-4" />
+            ) : (
+              <Eye className="w-4 h-4" />
+            )}
           </button>
         )}
       </div>
     </div>
-  )
-}
+  );
+};
