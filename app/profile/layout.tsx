@@ -17,5 +17,5 @@ export default function ProfileLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <div className={`${nunitoSans.variable} antialiased`}>{children}</div>;
+  return <div className={`${nunitoSans.variable} antialiased px-4`}>{children}</div>;
 }
