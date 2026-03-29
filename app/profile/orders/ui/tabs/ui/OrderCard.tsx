@@ -8,8 +8,7 @@ export default function OrderCard({
 }) {
   return (
     <Link
-      key={order.id}
-      href="#"
+      href={`/orders/${order.id}`}
       className="flex items-center justify-between py-2 border-b border-slate-200"
     >
       <div>

@@ -1,14 +1,16 @@
-import { inter } from '@/app/lib/fonts';
+import { Inter } from "next/font/google";
 
+const inter = Inter({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <section className={`${inter.variable} antialiased`}>
-            {children}
-        </section>
-    );
+  return (
+    <section className={`${inter.variable} antialiased`}>{children}</section>
+  );
 }

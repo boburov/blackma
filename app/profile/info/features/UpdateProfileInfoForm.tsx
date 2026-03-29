@@ -19,6 +19,8 @@ export default function UpdateProfileInfoFunction() {
             src="https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg"
             alt="profile pic"
             className="w-full h-full object-cover aspect-square rounded-full"
+            width={112}
+            height={112}
           />
         </label>
         <Input type="file" id="avatar" className="hidden" />
