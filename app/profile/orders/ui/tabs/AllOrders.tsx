@@ -32,7 +32,7 @@ export default function AllOrders() {
   return (
     <div>
       {allOrders.map((o) => (
-        <OrderCard order={o} />
+        <OrderCard key={o.id} order={o} />
       ))}
     </div>
   );

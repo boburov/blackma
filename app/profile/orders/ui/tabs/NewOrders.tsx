@@ -21,7 +21,7 @@ export default function NewOrders() {
   return (
     <div>
       {newOrders.map((o) => (
-        <OrderCard order={o} />
+        <OrderCard key={o.id} order={o} />
       ))}
     </div>
   );
