@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function ProfilePage() {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 container">
       <ProfileTopBar title="Profil" path="/" />
       <PageHeading>Shaxsiy kabinet</PageHeading>
       <div>
