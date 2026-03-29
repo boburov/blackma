@@ -1,8 +1,14 @@
-import Image, { StaticImageData } from "next/image"
-import { Ruler, Palette, Clock, Truck, CheckCircle, XCircle } from "lucide-react"
-import { Badge } from "./Badge"
-import { ProductCardProps } from "@/@types/product_card_type"
-
+import Image, { StaticImageData } from "next/image";
+import {
+  Ruler,
+  Palette,
+  Clock,
+  Truck,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import { Badge } from "./Badge";
+import { ProductCardProps } from "@/@types/product_card_type";
 
 const statusConfig = {
   pending: {
@@ -48,7 +54,8 @@ export default function ProductCard({
         <Image
           src={imageSrc}
           alt={imageAlt || productName}
-          fill
+          width={112}
+          height={112}
           className="object-cover"
         />
       </div>

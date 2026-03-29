@@ -104,7 +104,7 @@ const Page = () => {
         ))}
       </SectionCard>
 
-      <div className="bg-white max-w-lg pt-2">
+      <div className="bg-white pt-2">
         <button className="w-full bg-black text-white font-semibold py-4 rounded-2xl active:scale-95 transition-transform">
           Biznes oldiga borish
         </button>

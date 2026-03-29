@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Select from "../ui/Select";
 import Image from "next/image";
+import Man from "@/assets/profiles/profile.jpg"
 
 export default function UpdateProfileInfoFunction() {
   return (
@@ -16,7 +17,7 @@ export default function UpdateProfileInfoFunction() {
             <Pen size={16} />
           </span>
           <Image
-            src="https://static.vecteezy.com/system/resources/thumbnails/005/346/410/small/close-up-portrait-of-smiling-handsome-young-caucasian-man-face-looking-at-camera-on-isolated-light-gray-studio-background-photo.jpg"
+            src={Man}
             alt="profile pic"
             className="w-full h-full object-cover aspect-square rounded-full"
             width={112}
