@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const nunitoSans = Nunito_Sans({
+const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
 });

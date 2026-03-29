@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { nunitoSans } from "@/app/layout";
 import { formatDate } from "@/app/utils/date.formater";
 
 type OrderCardProps = {
@@ -16,7 +15,7 @@ const OrderCard = ({ orderId, createdAt, orderPrice }: OrderCardProps) => {
   return (
     <Link
       href={`/orders/${orderId}`}
-      className={`${nunitoSans.className} flex items-center justify-between p-4 border-b border-b-gray-300 hover:bg-gray-50 transition`}
+      className={`flex items-center justify-between p-4 border-b border-b-gray-300 hover:bg-gray-50 transition`}
     >
       <div className="flex flex-col">
         <span className="text-lg font-semibold">#{orderId}</span>
