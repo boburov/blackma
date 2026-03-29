@@ -85,7 +85,7 @@ export default function ProductCard({
           <div className="flex items-center gap-1">
             {price !== undefined && (
               <span className="text-sm font-bold text-gray-900">
-                ${(price * quantity).toLocaleString()}
+                {(price * quantity).toLocaleString()} so'm
               </span>
             )}
             {quantity > 1 && (
