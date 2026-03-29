@@ -6,7 +6,7 @@ export default function ProfileInfoPage() {
   return (
     <div className="space-y-2">
       <ProfileTopBar title="Profil" path="/profile" />
-      <PageHeading>Profil ma'lumotlari </PageHeading>
+      <PageHeading>{`Profil ma'lumotlari `}</PageHeading>
       <UpdateProfileInfoFunction />
     </div>
   );

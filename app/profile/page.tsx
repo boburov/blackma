@@ -39,7 +39,7 @@ export default function ProfilePage() {
         >
           <p className="text-lg">Til</p>
           <p className="flex items-center gap-2">
-            O'zbekcha <ChevronRight />
+            {`O'zbekcha `}<ChevronRight />
           </p>
         </Link>
         <Link

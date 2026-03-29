@@ -86,7 +86,7 @@ const Page = () => {
                 <hr />
                 <div className="flex justify-between font-bold">
                     <span>Jami summa</span>
-                    <span>12 194 000 so'm</span>
+                    <span>12 194 000 {`so'm`}</span>
                 </div>
             </SectionCard>
 

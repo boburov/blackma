@@ -35,10 +35,10 @@ export default function UpdateProfileInfoFunction() {
         <Select id="gender" name="gender">
           <option value="male">Erkak</option>
           <option value="female">Ayol</option>
-          <option value="unknown">Ko'rsatilmagan</option>
+          <option value="unknown">{`Ko'rsatilmagan`}</option>
         </Select>
       </div>
-      <Button>O'zgarishlarni saqlash</Button>
+      <Button>{`O'zgarishlarni saqlash`}</Button>
     </form>
   );
 }
