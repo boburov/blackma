@@ -25,7 +25,7 @@ const Page = () => {
     )
 
     return (
-        <section className="p-4 space-y-4 pb-24">
+        <section className="p-4 space-y-4 pb-24 container">
             <div className="flex items-center justify-center relative">
                 <ChevronLeft
                     size={25}
