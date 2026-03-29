@@ -61,7 +61,7 @@ const Page = () => {
                         <button
                             disabled={page === 1}
                             onClick={() => setPage((p) => p - 1)}
-                            className="px-3 py-1 border rounded disabled:opacity-50"
+                            className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
                         >
                             orqaga
                         </button>
@@ -71,7 +71,7 @@ const Page = () => {
                         <button
                             disabled={page === totalPages}
                             onClick={() => setPage((p) => p + 1)}
-                            className="px-3 py-1 border rounded disabled:opacity-50"
+                            className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
                         >
                             keyingisi
                         </button>
@@ -83,7 +83,7 @@ const Page = () => {
                 <InfoRow label="Umumiy" value="12 599 000 so'm" />
                 <InfoRow label="Chegirma (-20%)" value="-450 000 so'm" highlight="red" />
                 <InfoRow label="Yetkazib berish" value="45 000 so'm" />
-                <hr />
+                <span className="w-full flex border-b border-b-slate-300"></span>
                 <div className="flex justify-between font-bold">
                     <span>Jami summa</span>
                     <span>12 194 000 so'm</span>
@@ -101,7 +101,7 @@ const Page = () => {
                 ))}
             </SectionCard>
 
-            <div className="bg-white border-t max-w-lg pt-2">
+            <div className="bg-white max-w-lg pt-2">
                 <button className="w-full bg-black text-white font-semibold py-4 rounded-2xl active:scale-95 transition-transform">
                     Biznes oldiga borish
                 </button>

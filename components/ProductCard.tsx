@@ -48,7 +48,7 @@ export default function ProductCard({
   const StatusIcon = st?.icon;
 
   return (
-    <article className="flex items-center gap-3 p-3 rounded-2xl border bg-white hover:shadow-md transition w-full">
+    <article className="flex items-center gap-3 bg-white transition w-full pb-4 border-b border-b-slate-300">
       {/* Image */}
       <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 shrink-0">
         <Image
