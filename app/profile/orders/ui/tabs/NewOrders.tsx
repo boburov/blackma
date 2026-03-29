@@ -1,3 +1,28 @@
+import OrderCard from "./ui/OrderCard";
+
 export default function NewOrders() {
-    return <h1>New orders</h1>
+  const newOrders = [
+    {
+      id: 531,
+      date: "12.12.2025",
+      price: "1 250 000 so'm",
+    },
+    {
+      id: 1523,
+      date: "13.10.2025",
+      price: "546 900 so'm",
+    },
+    {
+      id: 1524,
+      date: "13.10.2025",
+      price: "546 900 so'm",
+    },
+  ];
+  return (
+    <div>
+      {newOrders.map((o) => (
+        <OrderCard order={o} />
+      ))}
+    </div>
+  );
 }

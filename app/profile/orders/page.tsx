@@ -9,9 +9,12 @@ export default function ProfileOrdersPage() {
   const tab = searchParams.get("tab") || "new";
 
   return (
-    <div>
+    <div className="space-y-2">
       <ProfileTopBar title="Buyurtmalarim" path="/profile" />
       <Tabs activeTab={tab} />
+      
+      <br />
+
       <TabsContent activeTab={tab} />
     </div>
   );

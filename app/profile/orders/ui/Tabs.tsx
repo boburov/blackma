@@ -15,13 +15,13 @@ export default function Tabs({ activeTab }: { activeTab: string }) {
   };
 
   return (
-    <div className="flex gap-2 border-b pb-2">
+    <div className="flex gap-2 justify-between">
       {PROFILE_TABS.map((t) => (
         <button
           key={t.key}
           onClick={() => changeTab(t.key)}
-          className={`px-4 py-2 ${
-            activeTab === t.key ? "border-b-2 border-black font-bold" : ""
+          className={`px-4 py-2 flex-1 rounded-full ${
+            activeTab === t.key ? "bg-black text-white" : "bg-gray-100"
           }`}
         >
           {t.label}
