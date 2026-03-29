@@ -22,7 +22,7 @@ export default function BottomNavigation() {
 
     return (
         <>
-            <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
+            <nav className="container fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-100 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
                 <div className="flex justify-around items-center h-16 pb-[env(safe-area-inset-bottom)]">
                     {NAV_ITEMS.map(({ path, label, Icon }) => {
                         const active = pathname === path;
@@ -55,7 +55,6 @@ export default function BottomNavigation() {
                 </div>
             </nav>
 
-            {/* Kontent nav ostida qolmasligi uchun spacer */}
             <div className="h-16" />
         </>
     );
