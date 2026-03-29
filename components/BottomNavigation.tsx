@@ -6,7 +6,7 @@ import { Home, User } from "lucide-react";
 
 const NAV_ITEMS = [
     { path: "/", label: "Buyurtmalar", Icon: Home },
-    { path: "/profil", label: "Profil", Icon: User },
+    { path: "/profile", label: "Profil", Icon: User },
 ];
 
 const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password"];
