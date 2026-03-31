@@ -10,7 +10,7 @@ export default function Select({
   return (
     <select
       {...props}
-      className={`bg-blue-100 px-4 py-3 rounded-lg outline-none ${className}`}
+      className={`bg-[#919EAB33] px-4 py-3 rounded-lg outline-none ${className}`}
     >
       {children}
     </select>

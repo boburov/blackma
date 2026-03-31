@@ -12,7 +12,7 @@ export function PaymentMethodOption({ method, selected, onSelect }: Props) {
   return (
     <button
       onClick={onSelect}
-      className={`w-full h-14 flex items-center justify-between px-4 py-3 rounded-xl border-2 transition-colors  ${selected
+      className={`w-full h-20 flex items-center justify-between px-4 py-6 rounded-xl border-2 transition-colors  ${selected
         ? "border-black "
         : "border-[#F4F4F4] bg-[#F8F8F8]"
         }`}
@@ -23,7 +23,7 @@ export function PaymentMethodOption({ method, selected, onSelect }: Props) {
           alt={method.label}
           className="h-8  object-contain"
         />
-        <span className="text-sm font-medium text-[#6E7179] line-through decoration-1">
+        <span className="text-[15px] font-medium text-[#6E7179] line-through decoration-1">
           {method.label}
         </span>
       </div>

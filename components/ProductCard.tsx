@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import {
   Ruler,
   Palette,
@@ -14,22 +14,22 @@ const statusConfig = {
   pending: {
     label: "Kutilmoqda",
     icon: Clock,
-    className: "bg-orange-50 text-orange-700",
+    className: "bg-orange-50 text-orange-600",
   },
   shipped: {
     label: "Yuborildi",
     icon: Truck,
-    className: "bg-blue-50 text-blue-700",
+    className: "bg-blue-50 text-blue-600",
   },
   delivered: {
     label: "Yetkazildi",
     icon: CheckCircle,
-    className: "bg-green-50 text-green-700",
+    className: "bg-green-50 text-green-600",
   },
   cancelled: {
     label: "Bekor qilindi",
     icon: XCircle,
-    className: "bg-red-50 text-red-700",
+    className: "bg-red-50 text-red-600",
   },
 };
 
@@ -48,48 +48,56 @@ export default function ProductCard({
   const StatusIcon = st?.icon;
 
   return (
-    <article className="flex items-center gap-3 bg-white transition w-full pb-4 border-b border-b-slate-300">
+    <article className="flex gap-3 w-full py-3 border-b border-slate-200">
       {/* Image */}
-      <div className="relative w-20 h-20 rounded-xl overflow-hidden bg-gray-100 shrink-0">
+      <div className="relative w-[99px] h-[99px] rounded-xl overflow-hidden bg-gray-100 shrink-0">
         <Image
           src={imageSrc}
           alt={imageAlt || productName}
-          width={112}
-          height={112}
+          fill
           className="object-cover"
         />
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 min-w-0 gap-1.5">
-        {/* Title */}
-        <h3 className="text-sm font-semibold text-gray-900 truncate">
-          {productName}
-        </h3>
+      <div className="flex flex-col flex-1 min-w-0 justify-between">
+        {/* Top */}
+        <div className="flex justify-between items-start gap-2">
+          <h3 className="text-sm font-semibold text-gray-900 line-clamp-2 leading-tight">
+            {productName}
+          </h3>
 
-        {/* Meta */}
-        <div className="flex flex-wrap gap-1.5">
-          <Badge icon={<Ruler size={12} />} text={size} />
-
-          <Badge
-            icon={<Palette size={12} />}
-            text={color}
-            extra={
-              <span
-                className="w-2.5 h-2.5 rounded-full border border-black/10"
-                style={{ background: color.startsWith("#") ? color : "#888" }}
-              />
-            }
-          />
+          {onRemove && (
+            <button
+              onClick={onRemove}
+              className="text-gray-400 hover:text-red-500 transition"
+            >
+              <XCircle size={18} />
+            </button>
+          )}
         </div>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between mt-1">
+        {/* Meta */}
+        <div className="flex gap-0 mt-1  flex-wrap flex-col">
+          <section>
+            <span className="text-sm">Size :</span>  <Badge icon={<Ruler size={12} />} text={size} />
+          </section>
+
+          <section>
+            <span className="text-sm">Color :</span><Badge
+              icon={<Palette size={12} />}
+              text={color}
+            />
+          </section>
+        </div>
+
+        {/* Bottom */}
+        <div className="flex items-center justify-between mt-2">
           {/* Price */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-baseline gap-1">
             {price !== undefined && (
               <span className="text-sm font-bold text-gray-900">
-                {(price * quantity).toLocaleString()} {`so'm`}
+                {(price * quantity).toLocaleString()} so'm
               </span>
             )}
             {quantity > 1 && (
@@ -99,26 +107,15 @@ export default function ProductCard({
 
           {/* Status */}
           {st && StatusIcon && (
-            <span
-              className={`flex items-center gap-1 text-[11px] font-semibold px-2.5 py-0.5 rounded-full ${st.className}`}
+            <div
+              className={`flex items-center gap-1 text-[11px] font-medium px-2 py-[2px] rounded-full ${st.className}`}
             >
-              <StatusIcon size={11} />
+              <StatusIcon size={12} />
               {st.label}
-            </span>
+            </div>
           )}
         </div>
       </div>
-
-      {/* Remove */}
-      {onRemove && (
-        <button
-          onClick={onRemove}
-          aria-label="Mahsulotni o'chirish"
-          className="text-gray-400 hover:text-red-500 transition p-1 rounded-lg"
-        >
-          <XCircle size={18} />
-        </button>
-      )}
     </article>
   );
 }
