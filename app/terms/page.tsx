@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import useTranslate from "@/app/hooks/useTranslate";
 
-export const TermsPage = () => {
+const TermsPage = () => {
   const { t } = useTranslate();
 
   const sections = [
@@ -52,3 +52,5 @@ export const TermsPage = () => {
     </div>
   );
 };
+
+export default TermsPage
