@@ -10,7 +10,7 @@ import LanguageModal from "./ui/LanguageModal";
 
 const LANG_LABELS = {
   uz: "O'zbekcha",
-  en: "English",
+  eng: "English",
   ru: "Русский",
 };
 

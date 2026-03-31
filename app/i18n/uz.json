@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "orders": "Buyurtmalar",
+    "profile": "Profil"
+  },
+  "auth": {
+    "login_title": "Tizimga kirish",
+    "courier": "Kuryer",
+    "login_button": "Kirish",
+    "forgot_password": "Parol unutdingizmi?",
+    "fill_all_fields": "Barcha maydonlarni to‘ldiring",
+    "invalid_email": "Email noto‘g‘ri formatda",
+    "password_min_length": "Parol kamida 6 ta belgidan iborat bo‘lishi kerak",
+    "credentials_correct": "Parol va Email To'g'ri",
+    "credentials_incorrect": "Parol va Email Noto'g'ri",
+    "invalid_credentials": "Email yoki parol noto‘g‘ri",
+    "login_agreement": "Tizimga kirish orqali quyidagilarga rozilik bildirasiz:",
+    "privacy_policy": "Maxfiylik siyosati",
+    "terms_of_use": "Foydalanish shartlari"
+  },
+  "orders": {
+    "my_orders": "Buyurtmalarim",
+    "search_placeholder": "Buyurtma IDsi Bo'yicha Qidirish ...",
+    "orders_found": "ta buyurtma topildi",
+    "order_not_found": "Buyurtma topilmadi",
+    "change_filter": "Filter yoki qidiruvni o'zgartiring",
+    "sum": "so'm"
+  },
+  "filter": {
+    "title": "Filter",
+    "sorting": "Saralash",
+    "oldest": "Eng eski",
+    "newest": "Eng yangi",
+    "price_desc": "Narx: yuqoridan pastga",
+    "price_asc": "Narx: pastdan yuqoriga",
+    "price_range": "Narx oralig'i (so'm)",
+    "min": "Min",
+    "max": "Max",
+    "date_range": "Sana oralig'i",
+    "from": "Dan",
+    "to": "Gacha",
+    "clear": "Tozalash",
+    "apply": "Qo'llash"
+  },
+  "profile": {
+    "personal_cabinet": "Shaxsiy kabinet",
+    "my_profile": "Profilim",
+    "settings": "Sozlamalar",
+    "language": "Til",
+    "help": "Yordam",
+    "name": "Ism",
+    "phone": "Telefon",
+    "gender": "Jinsi",
+    "male": "Erkak",
+    "female": "Ayol",
+    "not_specified": "Ko'rsatilmagan",
+    "save_changes": "O'zgarishlarni saqlash",
+    "select_language": "Tilni tanlang"
+  }
+}

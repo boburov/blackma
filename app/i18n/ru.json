@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "orders": "Заказы",
+    "profile": "Профиль"
+  },
+  "auth": {
+    "login_title": "Вход в систему",
+    "courier": "Курьер",
+    "login_button": "Войти",
+    "forgot_password": "Забыли пароль?",
+    "fill_all_fields": "Заполните все поля",
+    "invalid_email": "Неверный формат Email",
+    "password_min_length": "Пароль должен содержать минимум 6 символов",
+    "credentials_correct": "Пароль и Email верны",
+    "credentials_incorrect": "Пароль и Email неверны",
+    "invalid_credentials": "Неверный Email или пароль",
+    "login_agreement": "Входя в систему, вы соглашаетесь с:",
+    "privacy_policy": "Политика конфиденциальности",
+    "terms_of_use": "Условия использования"
+  },
+  "orders": {
+    "my_orders": "Мои заказы",
+    "search_placeholder": "Поиск по ID заказа ...",
+    "orders_found": "заказов найдено",
+    "order_not_found": "Заказ не найден",
+    "change_filter": "Измените фильтр или поиск",
+    "sum": "сум"
+  },
+  "filter": {
+    "title": "Фильтр",
+    "sorting": "Сортировка",
+    "oldest": "Старые",
+    "newest": "Новые",
+    "price_desc": "Цена: по убыванию",
+    "price_asc": "Цена: по возрастанию",
+    "price_range": "Диапазон цен (сум)",
+    "min": "Мин",
+    "max": "Макс",
+    "date_range": "Диапазон дат",
+    "from": "От",
+    "to": "До",
+    "clear": "Очистить",
+    "apply": "Применить"
+  },
+  "profile": {
+    "personal_cabinet": "Личный кабинет",
+    "my_profile": "Мой профиль",
+    "settings": "Настройки",
+    "language": "Язык",
+    "help": "Помощь",
+    "name": "Имя",
+    "phone": "Телефон",
+    "gender": "Пол",
+    "male": "Мужчина",
+    "female": "Женщина",
+    "not_specified": "Не указано",
+    "save_changes": "Сохранить изменения",
+    "select_language": "Выберите язык"
+  }
+}

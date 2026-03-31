@@ -5,7 +5,7 @@ import { X, Check } from "lucide-react";
 const LANGUAGES = [
     { code: "uz", label: "O'zbekcha", flag: "🇺🇿" },
     { code: "ru", label: "Русский", flag: "🇷🇺" },
-    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "eng", label: "English", flag: "🇬🇧" },
 ];
 
 export default function LanguageModal({ isOpen, onClose }: any) {

@@ -1,0 +1,60 @@
+{
+  "navigation": {
+    "orders": "Orders",
+    "profile": "Profile"
+  },
+  "auth": {
+    "login_title": "Login",
+    "courier": "Courier",
+    "login_button": "Login",
+    "forgot_password": "Forgot password?",
+    "fill_all_fields": "Fill all fields",
+    "invalid_email": "Invalid email format",
+    "password_min_length": "Password must be at least 6 characters",
+    "credentials_correct": "Password and Email are Correct",
+    "credentials_incorrect": "Password and Email are Incorrect",
+    "invalid_credentials": "Invalid email or password",
+    "login_agreement": "By logging in, you agree to:",
+    "privacy_policy": "Privacy policy",
+    "terms_of_use": "Terms of use"
+  },
+  "orders": {
+    "my_orders": "My Orders",
+    "search_placeholder": "Search by Order ID ...",
+    "orders_found": "orders found",
+    "order_not_found": "Order not found",
+    "change_filter": "Change filter or search",
+    "sum": "sum"
+  },
+  "filter": {
+    "title": "Filter",
+    "sorting": "Sorting",
+    "oldest": "Oldest",
+    "newest": "Newest",
+    "price_desc": "Price: High to Low",
+    "price_asc": "Price: Low to High",
+    "price_range": "Price range (sum)",
+    "min": "Min",
+    "max": "Max",
+    "date_range": "Date range",
+    "from": "From",
+    "to": "To",
+    "clear": "Clear",
+    "apply": "Apply"
+  },
+  "profile": {
+    "personal_cabinet": "Personal cabinet",
+    "my_profile": "My profile",
+    "settings": "Settings",
+    "language": "Language",
+    "help": "Help",
+    "name": "Name",
+    "phone": "Phone",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "not_specified": "Not specified",
+    "save_changes": "Save changes",
+    "select_language": "Select language"
+  }
+}
