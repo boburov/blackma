@@ -80,11 +80,11 @@ export default function ProductCard({
         {/* Meta */}
         <div className="flex gap-0 mt-1  flex-wrap flex-col">
           <section>
-            <span className="text-sm">Size :</span>  <Badge icon={<Ruler size={12} />} text={size} />
+            <span className="text-xs">Size :</span>  <Badge icon={<Ruler size={12} />} text={size} />
           </section>
 
           <section>
-            <span className="text-sm">Color :</span><Badge
+            <span className="text-xs">Color :</span><Badge
               icon={<Palette size={12} />}
               text={color}
             />
@@ -96,7 +96,7 @@ export default function ProductCard({
           {/* Price */}
           <div className="flex items-baseline gap-1">
             {price !== undefined && (
-              <span className="text-sm font-bold text-gray-900">
+              <span className="text-lg font-bold text-gray-900">
                 {(price * quantity).toLocaleString()} so'm
               </span>
             )}

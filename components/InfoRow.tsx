@@ -12,7 +12,7 @@ export function InfoRow({
       <span className={highlight === "red" ? "text-red-500" : "text-gray-500"}>
         {label}
       </span>
-      <span className={highlight === "red" ? "text-red-500" : "font-medium"}>
+      <span className={highlight === "red" ? "text-red-500" : " text-lg font-bold"}>
         {value}
       </span>
     </div>
