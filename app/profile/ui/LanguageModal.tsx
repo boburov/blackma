@@ -21,6 +21,7 @@ export default function LanguageModal({ isOpen, onClose }: any) {
         setSelected(code);
         setLanguage(code);
         onClose();
+        window.location.reload();
     };
 
     if (!isOpen) return null;

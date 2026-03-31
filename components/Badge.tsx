@@ -1,5 +1,4 @@
 export function Badge({
-  icon,
   text,
   extra,
 }: {
