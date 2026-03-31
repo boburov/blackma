@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { path: "/profile", labelKey: "navigation.profile", Icon: User },
 ];
 
-const AUTH_ROUTES = ["/login", "/auth/register", "/auth/forgot-password"];
+const AUTH_ROUTES = ["/login", "/terms","/privacy", "/forgot-password"];
 
 export default function BottomNavigation() {
   const pathname = usePathname();
