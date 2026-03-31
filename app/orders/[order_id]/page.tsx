@@ -10,7 +10,7 @@ import {
   PaymentMethodId,
 } from "@/@types/payment.method.types";
 import { InfoRow } from "@/components/InfoRow";
-import { PaymentMethodOption } from "@/components/PaymentMethon";
+import { PaymentMethodOption } from "@/components/PaymentMethonOption";
 
 const ITEMS_PER_PAGE = 2;
 

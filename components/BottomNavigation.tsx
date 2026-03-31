@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { path: "/profile", label: "Profil", Icon: User },
 ];
 
-const AUTH_ROUTES = ["/auth/login", "/auth/register", "/auth/forgot-password"];
+const AUTH_ROUTES = ["/login", "/auth/register", "/auth/forgot-password"];
 
 export default function BottomNavigation() {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ export default function BottomNavigation() {
 
   return (
     <>
-      <nav className="container fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-300 py-2">
+      <nav className="max-w-xl mx-auto fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-300 py-2">
         <div className="flex justify-around items-center h-16 pb-[env(safe-area-inset-bottom)]">
           {NAV_ITEMS.map(({ path, label, Icon }) => {
             const active = pathname === path;
@@ -36,18 +36,16 @@ export default function BottomNavigation() {
                   className={active ? "text-gray-900" : "text-gray-400"}
                 />
                 <span
-                  className={`text-[11px] tracking-wide ${
-                    active
-                      ? "text-gray-900 font-semibold"
-                      : "text-gray-400 font-medium"
-                  }`}
+                  className={`text-[11px] tracking-wide ${active
+                    ? "text-gray-900 font-semibold"
+                    : "text-gray-400 font-medium"
+                    }`}
                 >
                   {label}
                 </span>
                 <span
-                  className={`w-1 h-1 rounded-full bg-gray-900 transition-all duration-200 ${
-                    active ? "opacity-100 scale-100" : "opacity-0 scale-0"
-                  }`}
+                  className={`w-1 h-1 rounded-full bg-gray-900 transition-all duration-200 ${active ? "opacity-100 scale-100" : "opacity-0 scale-0"
+                    }`}
                 />
               </Link>
             );

@@ -11,7 +11,7 @@ const page = () => {
         </h1>
       </center>
 
-      <section className="flex flex-col w-full gap-y-4">
+      <section className="flex flex-col w-full gap-y-0">
         {orders.map((order) => {
           return (
             <Order

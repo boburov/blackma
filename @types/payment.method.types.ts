@@ -1,5 +1,6 @@
-import payme from "../assets/icons/payme.png"
-import click from "../assets/icons/click.png"
+import payme from "../assets/icons/payme.svg"
+import click from "../assets/icons/click.svg"
+import money from "../assets/icons/money.svg"
 import { StaticImageData } from "next/image"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -10,22 +11,10 @@ type IconMethod = {
     icon: StaticImageData
 }
 
-type EmojiMethod = {
-    id: string
-    label: string
-    emoji: string
-}
 
-export type PaymentMethod = IconMethod | EmojiMethod
+export type PaymentMethod = IconMethod 
 
 export type PaymentMethodId = (typeof PAYMENT_METHODS)[number]["id"]
-
-// ─── Helper ───────────────────────────────────────────────────────────────────
-
-export const isEmojiMethod = (method: PaymentMethod): method is EmojiMethod =>
-    "emoji" in method
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
 
 export const PAYMENT_METHODS = [
     {
@@ -41,6 +30,6 @@ export const PAYMENT_METHODS = [
     {
         id: "cash",
         label: "Naqd pul",
-        emoji: "💵",
+        icon: money,
     },
 ] as const satisfies readonly PaymentMethod[]
