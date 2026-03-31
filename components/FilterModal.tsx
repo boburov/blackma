@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { X, ChevronDown, Check } from "lucide-react";
+import useTranslate from "@/app/hooks/useTranslate";
 
 type SortOption = {
-    label: string;
+    labelKey: string;
     value: string;
 };
 
@@ -23,10 +24,10 @@ type FilterModalProps = {
 };
 
 const sortOptions: SortOption[] = [
-    { label: "Eng yangi", value: "date_desc" },
-    { label: "Eng eski", value: "date_asc" },
-    { label: "Narx: yuqoridan pastga", value: "price_desc" },
-    { label: "Narx: pastdan yuqoriga", value: "price_asc" },
+    { labelKey: "filter.newest", value: "date_desc" },
+    { labelKey: "filter.oldest", value: "date_asc" },
+    { labelKey: "filter.price_desc", value: "price_desc" },
+    { labelKey: "filter.price_asc", value: "price_asc" },
 ];
 
 const defaultFilters: FilterState = {
@@ -43,6 +44,7 @@ export default function FilterModal({
     onApply,
     initialFilters = defaultFilters,
 }: FilterModalProps) {
+    const { t } = useTranslate();
     const [filters, setFilters] = useState<FilterState>(initialFilters);
     const [visible, setVisible] = useState(false);
     const overlayRef = useRef<HTMLDivElement>(null);
@@ -114,7 +116,7 @@ export default function FilterModal({
                 {/* Header */}
                 <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
                     <div className="flex items-center gap-2">
-                        <h2 className="text-lg font-bold text-gray-900">Filter</h2>
+                        <h2 className="text-lg font-bold text-gray-900">{t("filter.title")}</h2>
                         {activeFilterCount > 0 && (
                             <span className="bg-blue-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full">
                                 {activeFilterCount}
@@ -133,7 +135,7 @@ export default function FilterModal({
                     {/* Sort By */}
                     <div>
                         <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                            Saralash
+                            {t("filter.sorting")}
                         </p>
                         <div className="grid grid-cols-2 gap-2">
                             {sortOptions.map((opt) => (
@@ -151,7 +153,7 @@ export default function FilterModal({
                                     }}
                                 >
                                     <span className="text-sm font-medium leading-snug">
-                                        {opt.label}
+                                        {t(opt.labelKey)}
                                     </span>
                                     {filters.sortBy === opt.value && (
                                         <Check size={15} strokeWidth={2.5} className="text-blue-500 shrink-0 ml-1" />
@@ -164,13 +166,13 @@ export default function FilterModal({
                     {/* Price Range */}
                     <div>
                         <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                            Narx oralig'i (so'm)
+                            {t("filter.price_range")}
                         </p>
                         <div className="flex items-center gap-3">
                             <div className="flex-1 relative">
                                 <input
                                     type="number"
-                                    placeholder="Min"
+                                    placeholder={t("filter.min")}
                                     value={filters.priceMin}
                                     onChange={(e) =>
                                         setFilters((f) => ({ ...f, priceMin: e.target.value }))
@@ -182,7 +184,7 @@ export default function FilterModal({
                             <div className="flex-1 relative">
                                 <input
                                     type="number"
-                                    placeholder="Max"
+                                    placeholder={t("filter.max")}
                                     value={filters.priceMax}
                                     onChange={(e) =>
                                         setFilters((f) => ({ ...f, priceMax: e.target.value }))
@@ -196,12 +198,12 @@ export default function FilterModal({
                     {/* Date Range */}
                     <div>
                         <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">
-                            Sana oralig'i
+                            {t("filter.date_range")}
                         </p>
                         <div className="flex items-center gap-3">
                             <div className="flex-1">
                                 <label className="block text-xs text-gray-400 mb-1.5 ml-1">
-                                    Dan
+                                    {t("filter.from")}
                                 </label>
                                 <input
                                     type="date"
@@ -215,7 +217,7 @@ export default function FilterModal({
                             <div className="w-5 h-0.5 bg-gray-300 shrink-0 mt-5" />
                             <div className="flex-1">
                                 <label className="block text-xs text-gray-400 mb-1.5 ml-1">
-                                    Gacha
+                                    {t("filter.to")}
                                 </label>
                                 <input
                                     type="date"
@@ -236,14 +238,14 @@ export default function FilterModal({
                         onClick={handleReset}
                         className="flex-1 py-3.5 rounded-2xl border-2 border-gray-200 text-gray-600 font-semibold text-sm hover:bg-gray-50 transition-colors"
                     >
-                        Tozalash
+                        {t("filter.clear")}
                     </button>
                     <button
                         onClick={handleApply}
                         className="flex-2 w-full py-3.5 rounded-2xl bg-blue-500 text-white font-semibold text-sm hover:bg-blue-600 active:scale-95 transition-all"
                         style={{ flex: 2 }}
                     >
-                        Qo'llash
+                        {t("filter.apply")}
                         {activeFilterCount > 0 && ` (${activeFilterCount})`}
                     </button>
                 </div>

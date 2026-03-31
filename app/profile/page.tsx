@@ -7,6 +7,7 @@ import { ChevronRight } from "lucide-react";
 import useAuth from "../hooks/useAuth";
 import { orders } from "../data/orders";
 import LanguageModal from "./ui/LanguageModal";
+import useTranslate from "../hooks/useTranslate";
 
 const LANG_LABELS = {
   uz: "O'zbekcha",
@@ -17,6 +18,7 @@ const LANG_LABELS = {
 type Lang = keyof typeof LANG_LABELS; // "uz" | "en" | "ru"
 
 export default function ProfilePage() {
+  const { t } = useTranslate();
   useAuth();
   const [langModalOpen, setLangModalOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState<Lang>("uz");
@@ -34,15 +36,15 @@ export default function ProfilePage() {
 
   return (
     <div className="space-y-2 container">
-      <ProfileTopBar title="Profil" path="/" />
-      <PageHeading>Shaxsiy kabinet</PageHeading>
+      <ProfileTopBar title={t("navigation.profile")} path="/" />
+      <PageHeading>{t("profile.personal_cabinet")}</PageHeading>
 
       <div>
         <Link
           href="/profile/info"
           className="flex items-center justify-between py-4 border-b border-slate-200"
         >
-          <p className="text-lg Nunito_Sans_SemiBold">Profilim</p>
+          <p className="text-lg Nunito_Sans_SemiBold">{t("profile.my_profile")}</p>
           <p className="flex items-center gap-2 Nunito_Sans_SemiBold">
             Ibrat <ChevronRight />
           </p>
@@ -51,7 +53,7 @@ export default function ProfilePage() {
           href="/profile/orders"
           className="flex items-center justify-between py-4 border-b border-slate-200"
         >
-          <p className="text-lg Nunito_Sans_SemiBold">Buyurtmalarim</p>
+          <p className="text-lg Nunito_Sans_SemiBold">{t("orders.my_orders")}</p>
           <p className="flex items-center gap-2 Nunito_Sans_SemiBold">
             {orders.length} <ChevronRight />
           </p>
@@ -59,14 +61,14 @@ export default function ProfilePage() {
       </div>
 
       <br />
-      <PageHeading>Sozlamalar</PageHeading>
+      <PageHeading>{t("profile.settings")}</PageHeading>
 
       <div>
         <button
           onClick={() => setLangModalOpen(true)}
           className="w-full flex items-center justify-between py-4 border-b border-slate-200 Nunito_Sans_SemiBold"
         >
-          <p className="text-lg">Til</p>
+          <p className="text-lg">{t("profile.language")}</p>
           <p className="flex items-center gap-2">
             {LANG_LABELS[currentLang]} <ChevronRight />
           </p>
@@ -76,7 +78,7 @@ export default function ProfilePage() {
           target="_blank"
           className="flex items-center justify-between py-4 border-b border-slate-200 Nunito_Sans_SemiBold"
         >
-          <p className="text-lg">Yordam</p>
+          <p className="text-lg">{t("profile.help")}</p>
           <p className="flex items-center gap-2">
             Telegram Support <ChevronRight />
           </p>

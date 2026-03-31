@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import { X, Check } from "lucide-react";
+import useTranslate from "@/app/hooks/useTranslate";
 
 const LANGUAGES = [
     { code: "uz", label: "O'zbekcha", flag: "🇺🇿" },
@@ -9,16 +10,16 @@ const LANGUAGES = [
 ];
 
 export default function LanguageModal({ isOpen, onClose }: any) {
+    const { t, lang: currentLang, setLanguage } = useTranslate();
     const [selected, setSelected] = useState("uz");
 
     useEffect(() => {
-        const saved = localStorage.getItem("lang");
-        if (saved) setSelected(saved);
-    }, []);
+        setSelected(currentLang);
+    }, [currentLang]);
 
-    const handleSelect = (code: any) => {
+    const handleSelect = (code: string) => {
         setSelected(code);
-        localStorage.setItem("lang", code);
+        setLanguage(code);
         onClose();
     };
 
@@ -34,7 +35,7 @@ export default function LanguageModal({ isOpen, onClose }: any) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center justify-between">
-                    <h2 className="text-xl Nunito_Sans_SemiBold">Tilni tanlang</h2>
+                    <h2 className="text-xl Nunito_Sans_SemiBold">{t("profile.select_language")}</h2>
                     <button
                         onClick={onClose}
                         className="p-1 rounded-full hover:bg-slate-100 transition"

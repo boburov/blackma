@@ -18,6 +18,25 @@
     "privacy_policy": "Privacy policy",
     "terms_of_use": "Terms of use"
   },
+  "order": {
+    "title": "Order",
+    "details": "Details",
+    "status": "Status",
+    "status_value": "Preparing",
+    "date": "Date",
+    "address": "Address",
+    "prev": "Back",
+    "next": "Next",
+    "payment_details": "Payment details",
+    "total": "Total",
+    "discount": "Discount (-20%)",
+    "delivery": "Delivery",
+    "grand_total": "Grand total",
+    "payment_method": "Payment method",
+    "go_to_business": "Go to business"
+  },
+  "all": "All",
+  "new": "New",
   "orders": {
     "my_orders": "My Orders",
     "search_placeholder": "Search by Order ID ...",

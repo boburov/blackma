@@ -3,6 +3,25 @@
     "orders": "Buyurtmalar",
     "profile": "Profil"
   },
+  "new":"Yangi",
+  "all":"Hammasi",
+  "order": {
+    "title": "Buyurtma",
+    "details": "Ma'lumotlar",
+    "status": "Holati",
+    "status_value": "Tayyorlanmoqda",
+    "date": "Sanasi",
+    "address": "Manzil",
+    "prev": "Orqaga",
+    "next": "Keyingisi",
+    "payment_details": "To'lov ma'lumotlari",
+    "total": "Umumiy",
+    "discount": "Chegirma (-20%)",
+    "delivery": "Yetkazib berish",
+    "grand_total": "Jami summa",
+    "payment_method": "To'lov usuli",
+    "go_to_business": "Biznes oldiga borish"
+  },
   "auth": {
     "login_title": "Tizimga kirish",
     "courier": "Kuryer",

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Badge } from "./Badge";
 import { ProductCardProps } from "@/@types/product_card_type";
+import useTranslate from "@/app/hooks/useTranslate";
 
 const statusConfig = {
   pending: {
@@ -46,6 +47,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   const st = status ? statusConfig[status] : null;
   const StatusIcon = st?.icon;
+  const { t } = useTranslate()
 
   return (
     <article className="flex gap-3 w-full py-3 border-b border-slate-200">
@@ -97,7 +99,7 @@ export default function ProductCard({
           <div className="flex items-baseline gap-1 SF_Pro_Display_Bold">
             {price !== undefined && (
               <span className="text-lg font-bold text-gray-900">
-                {(price * quantity).toLocaleString()} so'm
+                {(price * quantity).toLocaleString()} {t("orders.sum")}
               </span>
             )}
             {quantity > 1 && (

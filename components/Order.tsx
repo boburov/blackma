@@ -1,7 +1,8 @@
+"use client"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import { formatDate } from "@/app/utils/date.formater"
-
+import useTranslate from "@/app/hooks/useTranslate"
 
 type OrderCardProps = {
   orderId: string;
@@ -9,10 +10,12 @@ type OrderCardProps = {
   orderPrice: number;
 };
 
-const formatPrice = (price: number) =>
-  new Intl.NumberFormat("uz-UZ").format(price) + " so'm";
-
 const OrderCard = ({ orderId, createdAt, orderPrice }: OrderCardProps) => {
+  const { t } = useTranslate();
+  
+  const formatPrice = (price: number) =>
+    new Intl.NumberFormat("uz-UZ").format(price) + " " + t("orders.sum");
+
   return (
     <Link
       href={`/orders/${orderId}`}

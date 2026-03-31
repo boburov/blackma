@@ -5,10 +5,12 @@ import Link from "next/link";
 import { LOGIN_FIELDS, LoginForm } from "@/@types/login.types";
 import { FormField } from "./FormField";
 import { useRouter } from "next/navigation";
+import useTranslate from "@/app/hooks/useTranslate";
 
 const INITIAL_FORM: LoginForm = { credential: "", password: "" };
 
 export const LoginFormCard = () => {
+  const { t } = useTranslate();
   const [form, setForm] = useState<LoginForm>(INITIAL_FORM);
   const router = useRouter()
   const [msg, setMsg] = useState<null | boolean>(null);
@@ -28,17 +30,17 @@ export const LoginFormCard = () => {
     setMsg(null);
 
     if (!mail || !password) {
-      setError("Barcha maydonlarni to‘ldiring");
+      setError(t("auth.fill_all_fields"));
       return;
     }
 
     if (!emailRegex.test(mail)) {
-      setError("Email noto‘g‘ri formatda");
+      setError(t("auth.invalid_email"));
       return;
     }
 
     if (password.length < 6) {
-      setError("Parol kamida 6 ta belgidan iborat bo‘lishi kerak");
+      setError(t("auth.password_min_length"));
       return;
     }
 
@@ -58,12 +60,12 @@ export const LoginFormCard = () => {
       }, 500);
     } else {
       setMsg(false);
-      setError("Email yoki parol noto‘g‘ri");
+      setError(t("auth.invalid_credentials"));
     }
   };
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm w-full space-y-4 max-w-lg">
-      <h2 className="text-xl font-bold">Tizimga kirish</h2>
+      <h2 className="text-xl font-bold">{t("auth.login_title")}</h2>
 
       <form
         onSubmit={(e) => {
@@ -73,13 +75,13 @@ export const LoginFormCard = () => {
         className="space-y-3">
         {msg === true && (
           <span className="text-green-500">
-            Parol va Email To'g'ri
+            {t("auth.credentials_correct")}
           </span>
         )}
 
         {msg === false && (
           <span className="text-red-500">
-            Parol va Email Noto'g'ri
+            {t("auth.credentials_incorrect")}
           </span>
         )}
 
@@ -103,25 +105,26 @@ export const LoginFormCard = () => {
             href="/forgot-password"
             className="text-sm text-blue-500 hover:underline"
           >
-            Parol unutdingizmi?
+            {t("auth.forgot_password")}
           </Link>
         </div>
         <button
           type="button"
+          onClick={handleSubmit}
           className="w-full bg-gray-900 text-white font-semibold py-3 rounded-lg hover:bg-black active:scale-95 transition-all"
         >
-          Kirish
+          {t("auth.login_button")}
         </button>
       </form>
 
 
       <p className="text-xs text-center text-gray-500">
-        Tizimga kirish orqali quyidagilarga rozilik bildirasiz:{" "}
+        {t("auth.login_agreement")}{" "}
         <Link href="/privacy" className="text-blue-500 hover:underline">
-          Maxfiylik siyosati
+          {t("auth.privacy_policy")}
         </Link>{" "}
         <Link href="/terms" className="text-blue-500 hover:underline">
-          Foydalanish shartlari
+          {t("auth.terms_of_use")}
         </Link>
       </p>
     </div >

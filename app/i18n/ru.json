@@ -3,6 +3,25 @@
     "orders": "Заказы",
     "profile": "Профиль"
   },
+  "new": "Нoвиь",
+  "all": "Bсе",
+  "order": {
+    "title": "Заказ",
+    "details": "Информация",
+    "status": "Статус",
+    "status_value": "Готовится",
+    "date": "Дата",
+    "address": "Адрес",
+    "prev": "Назад",
+    "next": "Далее",
+    "payment_details": "Детали оплаты",
+    "total": "Итого",
+    "discount": "Скидка (-20%)",
+    "delivery": "Доставка",
+    "grand_total": "Общая сумма",
+    "payment_method": "Способ оплаты",
+    "go_to_business": "Перейти к бизнесу"
+  },
   "auth": {
     "login_title": "Вход в систему",
     "courier": "Курьер",

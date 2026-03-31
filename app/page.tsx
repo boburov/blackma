@@ -6,6 +6,7 @@ import { calculateOrderPrice } from "./utils/order.price.calculator";
 import useAuth from "./hooks/useAuth";
 import { SlidersHorizontal } from "lucide-react";
 import FilterModal from "@/components/FilterModal";
+import useTranslate from "./hooks/useTranslate";
 
 type FilterState = {
   sortBy: string;
@@ -24,6 +25,7 @@ const defaultFilters: FilterState = {
 };
 
 const page = () => {
+  const { t } = useTranslate();
   useAuth();
 
   const [search, setSearch] = useState("");
@@ -102,7 +104,7 @@ const page = () => {
   return (
     <section className="container px-5">
       <center>
-        <h1 className="font-bold text-2xl mt-5 mb-6">Buyurtmalarim</h1>
+        <h1 className="font-bold text-2xl mt-5 mb-6">{t("orders.my_orders")}</h1>
       </center>
 
       {/* Search + Filter Row */}
@@ -112,7 +114,7 @@ const page = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="w-full bg-gray-100 rounded-lg px-5 py-3"
-          placeholder="Buyurtma IDsi Bo'yicha Qidirish ..."
+          placeholder={t("orders.search_placeholder")}
         />
         <button
           onClick={() => setIsFilterOpen(true)}
@@ -133,15 +135,15 @@ const page = () => {
           {activeFilters.sortBy !== "date_desc" && (
             <span className="text-xs bg-blue-50 text-blue-600 border border-blue-200 rounded-full px-3 py-1 font-medium">
               {{
-                date_asc: "📅 Eng eski",
-                price_desc: "💰 Narx ↓",
-                price_asc: "💰 Narx ↑",
+                date_asc: `📅 ${t("filter.oldest")}`,
+                price_desc: `💰 ${t("filter.price_desc")}`,
+                price_asc: `💰 ${t("filter.price_asc")}`,
               }[activeFilters.sortBy] ?? ""}
             </span>
           )}
           {(activeFilters.priceMin || activeFilters.priceMax) && (
             <span className="text-xs bg-blue-50 text-blue-600 border border-blue-200 rounded-full px-3 py-1 font-medium">
-              💵 {activeFilters.priceMin || "0"} — {activeFilters.priceMax || "∞"} so'm
+              💵 {activeFilters.priceMin || "0"} — {activeFilters.priceMax || "∞"} {t("orders.sum")}
             </span>
           )}
           {(activeFilters.dateFrom || activeFilters.dateTo) && (
@@ -153,14 +155,14 @@ const page = () => {
             onClick={() => setActiveFilters(defaultFilters)}
             className="text-xs text-gray-400 hover:text-red-400 px-2 py-1 rounded-full border border-gray-200 transition-colors"
           >
-            Tozalash ✕
+            {t("filter.clear")} ✕
           </button>
         </div>
       )}
 
       {/* Results count */}
       <p className="text-xs text-gray-400 mb-3">
-        {filteredOrders.length} ta buyurtma topildi
+        {filteredOrders.length} {t("orders.orders_found")}
       </p>
 
       {/* Orders list */}
@@ -177,8 +179,8 @@ const page = () => {
         ) : (
           <div className="text-center py-16 text-gray-400">
             <p className="text-4xl mb-3">🔍</p>
-            <p className="font-medium text-gray-500">Buyurtma topilmadi</p>
-            <p className="text-sm mt-1">Filter yoki qidiruvni o'zgartiring</p>
+            <p className="font-medium text-gray-500">{t("orders.order_not_found")}</p>
+            <p className="text-sm mt-1">{t("orders.change_filter")}</p>
           </div>
         )}
       </section>

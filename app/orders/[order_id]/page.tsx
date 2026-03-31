@@ -5,29 +5,27 @@ import { ChevronLeft } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "../../data/products";
 import { SectionCard } from "@/components/SectionCard";
-import {
-  PAYMENT_METHODS,
-  PaymentMethodId,
-} from "@/@types/payment.method.types";
+import { PAYMENT_METHODS, PaymentMethodId } from "@/@types/payment.method.types";
 import { InfoRow } from "@/components/InfoRow";
 import { PaymentMethodOption } from "@/components/PaymentMethonOption";
 import useAuth from "@/app/hooks/useAuth";
+import useTranslate from "@/app/hooks/useTranslate";
 
 const ITEMS_PER_PAGE = 2;
 
 const Page = () => {
   const router = useRouter();
+  const { t } = useTranslate();
   const [page, setPage] = useState(1);
-  const [selectedPayment, setSelectedPayment] =
-    useState<PaymentMethodId>("payme");
+  const [selectedPayment, setSelectedPayment] = useState<PaymentMethodId>("payme");
 
   const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
   const paginatedProducts = products.slice(
     (page - 1) * ITEMS_PER_PAGE,
-    page * ITEMS_PER_PAGE,
+    page * ITEMS_PER_PAGE
   );
 
-  useAuth()
+  useAuth();
 
   return (
     <section className="p-4 space-y-4 pb-24 container">
@@ -37,13 +35,13 @@ const Page = () => {
           className="text-black cursor-pointer absolute left-0"
           onClick={() => router.back()}
         />
-        <h1 className={`font-bold text-2xl text-center`}>Buyurtma</h1>
+        <h1 className="font-bold text-2xl text-center">{t("order.title")}</h1>
       </div>
 
-      <SectionCard title="Ma'lumotlar">
-        <InfoRow label="Holati" value="Tayyorlanmoqda" />
-        <InfoRow label="Sanasi" value="12.12.2025" />
-        <InfoRow label="Manzil" value="Uy - Chilonzor 23,30,39" />
+      <SectionCard title={t("order.details")}>
+        <InfoRow label={t("order.status")} value={t("order.status_value")} />
+        <InfoRow label={t("order.date")} value="12.12.2025" />
+        <InfoRow label={t("order.address")} value="Uy - Chilonzor 23,30,39" />
       </SectionCard>
 
       <section className="bg-white rounded-[20px] px-[14px] py-[5px] pb-4 border-slate-300 border space-y-3">
@@ -58,7 +56,6 @@ const Page = () => {
             color={product.color}
           />
         ))}
-
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2 pt-2">
             <button
@@ -66,7 +63,7 @@ const Page = () => {
               onClick={() => setPage((p) => p - 1)}
               className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
             >
-              Orqaga
+              {t("order.prev")}
             </button>
             <span className="text-sm px-2 w-20 flex items-center justify-center">
               {page} / {totalPages}
@@ -76,27 +73,24 @@ const Page = () => {
               onClick={() => setPage((p) => p + 1)}
               className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
             >
-              Keyingisi
+              {t("order.next")}
             </button>
           </div>
         )}
       </section>
-      <SectionCard title="To'lov ma'lumotlari">
-        <InfoRow label="Umumiy" value="12 599 000 so'm" />
-        <InfoRow
-          label="Chegirma (-20%)"
-          value="-450 000 so'm"
-          highlight="red"
-        />
-        <InfoRow label="Yetkazib berish" value="45 000 so'm" />
-        <span className="w-full flex border-b border-b-slate-300"></span>
+
+      <SectionCard title={t("order.payment_details")}>
+        <InfoRow label={t("order.total")} value="12 599 000" />
+        <InfoRow label={t("order.discount")} value="-450 000" highlight="red" />
+        <InfoRow label={t("order.delivery")} value="45 000" />
+        <span className="w-full flex border-b border-b-slate-300" />
         <div className="flex justify-between font-bold">
-          <span>Jami summa</span>
-          <span>12 194 000 so'm</span>
+          <span>{t("order.grand_total")}</span>
+          <span>12 194 000 {t("orders.sum")}</span>
         </div>
       </SectionCard>
 
-      <SectionCard title="To'lov usuli">
+      <SectionCard title={t("order.payment_method")}>
         {PAYMENT_METHODS.map((method) => (
           <PaymentMethodOption
             key={method.id}
@@ -109,7 +103,7 @@ const Page = () => {
 
       <div className="bg-white pt-2">
         <button className="w-full bg-black text-white font-semibold py-4 rounded-2xl active:scale-95 transition-transform">
-          Biznes oldiga borish
+          {t("order.go_to_business")}
         </button>
       </div>
     </section>
