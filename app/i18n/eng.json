@@ -6,6 +6,10 @@
   "auth": {
     "login_title": "Login",
     "courier": "Courier",
+    "credential_label": "Email",
+    "credential_placeholder": "Enter your email",
+    "password_label": "Password",
+    "password_placeholder": "Enter your password",
     "login_button": "Login",
     "forgot_password": "Forgot password?",
     "fill_all_fields": "Fill all fields",

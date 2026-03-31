@@ -3,8 +3,8 @@
     "orders": "Buyurtmalar",
     "profile": "Profil"
   },
-  "new":"Yangi",
-  "all":"Hammasi",
+  "new": "Yangi",
+  "all": "Hammasi",
   "order": {
     "title": "Buyurtma",
     "details": "Ma'lumotlar",
@@ -25,6 +25,10 @@
   "auth": {
     "login_title": "Tizimga kirish",
     "courier": "Kuryer",
+    "credential_label": "Elektron pochta",
+    "credential_placeholder": "Elektron pochtangizni kiriting",
+    "password_label": "Parol",
+    "password_placeholder": "Parolingizni kiriting",
     "login_button": "Kirish",
     "forgot_password": "Parol unutdingizmi?",
     "fill_all_fields": "Barcha maydonlarni to‘ldiring",

@@ -93,13 +93,14 @@ export const LoginFormCard = () => {
           <FormField
             key={field.name}
             {...field}
-            placeholder={field.placeholder}
+            label={t(`auth.${field.name}_label`)}
+            placeholder={t(`auth.${field.name}_placeholder`)}
             type={field.type}
             value={String(form[field.name])}
             onChange={setField(field.name)}
           />
         ))}
-
+        
         <div className="flex justify-end">
           <Link
             href="/forgot-password"

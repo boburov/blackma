@@ -49,7 +49,7 @@ export const FormField = ({
 
         {type === "password" && (
           <button
-            type="submit"
+            type="button"
             onClick={() => setVisible((v) => !v)}
             className="text-gray-400 hover:text-gray-600 transition-colors"
           >

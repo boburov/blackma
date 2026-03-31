@@ -25,6 +25,10 @@
   "auth": {
     "login_title": "Вход в систему",
     "courier": "Курьер",
+    "credential_label": "Электронная почта",
+    "credential_placeholder": "Введите вашу почту",
+    "password_label": "Пароль",
+    "password_placeholder": "Введите ваш пароль",
     "login_button": "Войти",
     "forgot_password": "Забыли пароль?",
     "fill_all_fields": "Заполните все поля",
