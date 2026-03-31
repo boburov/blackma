@@ -12,7 +12,7 @@ export function PaymentMethodOption({ method, selected, onSelect }: Props) {
   return (
     <button
       onClick={onSelect}
-      className={`w-full h-20 flex items-center justify-between px-4 py-6 rounded-xl border-2 transition-colors  ${selected
+      className={`w-full h-20 flex items-center justify-between px-4 py-6 rounded-xl border-2 transition-colors Montserrat_Regular ${selected
         ? "border-black "
         : "border-[#F4F4F4] bg-[#F8F8F8]"
         }`}
@@ -21,7 +21,7 @@ export function PaymentMethodOption({ method, selected, onSelect }: Props) {
         <Image
           src={method.icon}
           alt={method.label}
-          className="h-8  object-contain"
+          className="w-20 h-10 object-contain object-left"
         />
         <span className="text-[15px] font-medium text-[#6E7179] line-through decoration-1">
           {method.label}

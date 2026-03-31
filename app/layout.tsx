@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased max-w-xl mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} antialiased mx-auto`}
       >
         {children}
         <BottomNavigation />

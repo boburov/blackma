@@ -4,7 +4,7 @@ import UpdateProfileInfoFunction from "./features/UpdateProfileInfoForm";
 
 export default function ProfileInfoPage() {
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 container">
       <ProfileTopBar title="Profil" path="/profile" />
       <PageHeading>{`Profil ma'lumotlari `}</PageHeading>
       <UpdateProfileInfoFunction />

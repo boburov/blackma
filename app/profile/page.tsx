@@ -1,9 +1,12 @@
+"use client"
 import Link from "next/link";
 import PageHeading from "./ui/PageHeading";
 import ProfileTopBar from "./ui/TopBar";
 import { ChevronRight } from "lucide-react";
+import useAuth from "../hooks/useAuth";
 
 export default function ProfilePage() {
+  useAuth()
   return (
     <div className="space-y-2 container">
       <ProfileTopBar title="Profil" path="/" />
@@ -43,7 +46,8 @@ export default function ProfilePage() {
           </p>
         </Link>
         <Link
-          href="#"
+          href="https://t.me/balckme_support"
+          target="_blank"
           className="flex items-center justify-between py-4 border-b border-slate-200"
         >
           <p className="text-lg">Yordam</p>

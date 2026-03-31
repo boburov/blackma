@@ -19,8 +19,8 @@ export default function BottomNavigation() {
   if (isAuthRoute) return null;
 
   return (
-    <>
-      <nav className="max-w-xl mx-auto fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-300 py-2">
+    <section className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-300 py-2 z-0">
+      <nav className="max-w-xl mx-auto ">
         <div className="flex justify-around items-center h-16 pb-[env(safe-area-inset-bottom)]">
           {NAV_ITEMS.map(({ path, label, Icon }) => {
             const active = pathname === path;
@@ -53,7 +53,6 @@ export default function BottomNavigation() {
         </div>
       </nav>
 
-      <div className="h-16" />
-    </>
+    </section>
   );
 }

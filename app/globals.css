@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
-/* .container {
-    @apply w-full max-w-lg mx-auto px-5
-} */
+.container {
+  @apply w-full max-w-lg mx-auto px-5;
+}
+
+@font-face {
+  font-family: SF_Pro_Display_Bold;
+  src: url(./lib/fonts/SFPRODISPLAYBOLD.OTF);
+}
+
+@font-face {
+  font-family: SF_Pro_Display_Normal;
+  src: url(./lib/fonts/SFPRODISPLAYREGULAR.OTF);
+}
+
+@font-face {
+  font-family: Montserrat_Regular;
+  src: url(./lib/fonts/montmed.ttf);
+}
+
+.SF_Pro_Display_Bold {
+  font-family: SF_Pro_Display_Bold;
+}
+
+.SF_Pro_Display_Normal {
+  font-family: SF_Pro_Display_Normal;
+}
+
+.Montserrat_Regular{
+  font-family: Montserrat_Regular;
+}

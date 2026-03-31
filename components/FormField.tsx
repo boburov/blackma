@@ -7,12 +7,12 @@ type FormFieldProps = {
   name: string;
   label: string;
   placeholder: string;
-  type: "text" | "password";
+  type: "email" | "password";
   value: string;
   onChange: (value: string) => void;
 };
 
-const fieldIcon = (type: "text" | "password") =>
+const fieldIcon = (type: "email" | "password") =>
   type === "password" ? Lock : User;
 
 export const FormField = ({
@@ -42,13 +42,14 @@ export const FormField = ({
           type={inputType}
           placeholder={placeholder}
           value={value}
+          required
           onChange={(e) => onChange(e.target.value)}
           className="flex-1 text-sm bg-transparent outline-none placeholder:text-gray-400"
         />
 
         {type === "password" && (
           <button
-            type="button"
+            type="submit"
             onClick={() => setVisible((v) => !v)}
             className="text-gray-400 hover:text-gray-600 transition-colors"
           >
@@ -59,6 +60,7 @@ export const FormField = ({
             )}
           </button>
         )}
+
       </div>
     </div>
   );

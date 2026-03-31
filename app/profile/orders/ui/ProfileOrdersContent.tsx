@@ -9,7 +9,7 @@ export default function ProfileOrdersContent() {
   const tab = searchParams.get("tab") || "new";
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 container">
       <ProfileTopBar title="Buyurtmalarim" path="/profile" />
       <Tabs activeTab={tab} />
       <br />

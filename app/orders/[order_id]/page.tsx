@@ -11,6 +11,7 @@ import {
 } from "@/@types/payment.method.types";
 import { InfoRow } from "@/components/InfoRow";
 import { PaymentMethodOption } from "@/components/PaymentMethonOption";
+import useAuth from "@/app/hooks/useAuth";
 
 const ITEMS_PER_PAGE = 2;
 
@@ -25,6 +26,8 @@ const Page = () => {
     (page - 1) * ITEMS_PER_PAGE,
     page * ITEMS_PER_PAGE,
   );
+
+  useAuth()
 
   return (
     <section className="p-4 space-y-4 pb-24 container">
@@ -43,7 +46,7 @@ const Page = () => {
         <InfoRow label="Manzil" value="Uy - Chilonzor 23,30,39" />
       </SectionCard>
 
-      <SectionCard>
+      <section className="bg-white rounded-[20px] px-[14px] py-[5px] pb-4 border-slate-300 border space-y-3">
         {paginatedProducts.map((product, index) => (
           <ProductCard
             key={index}
@@ -63,9 +66,9 @@ const Page = () => {
               onClick={() => setPage((p) => p - 1)}
               className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
             >
-              orqaga
+              Orqaga
             </button>
-            <span className="text-sm px-2">
+            <span className="text-sm px-2 w-20 flex items-center justify-center">
               {page} / {totalPages}
             </span>
             <button
@@ -73,11 +76,11 @@ const Page = () => {
               onClick={() => setPage((p) => p + 1)}
               className="px-3 py-1 border border-slate-300 rounded disabled:opacity-50"
             >
-              keyingisi
+              Keyingisi
             </button>
           </div>
         )}
-      </SectionCard>
+      </section>
       <SectionCard title="To'lov ma'lumotlari">
         <InfoRow label="Umumiy" value="12 599 000 so'm" />
         <InfoRow

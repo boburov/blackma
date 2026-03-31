@@ -60,10 +60,10 @@ export default function ProductCard({
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 min-w-0 justify-between">
+      <div className="flex flex-col justify-between">
         {/* Top */}
         <div className="flex justify-between items-start gap-2">
-          <h3 className="text-sm font-semibold text-gray-900 line-clamp-2 leading-tight">
+          <h3 className="text-base font-semibold text-gray-900 line-clamp-2 leading-[80%] SF_Pro_Display_Bold ">
             {productName}
           </h3>
 
@@ -78,13 +78,13 @@ export default function ProductCard({
         </div>
 
         {/* Meta */}
-        <div className="flex gap-0 mt-1  flex-wrap flex-col">
-          <section>
-            <span className="text-xs">Size :</span>  <Badge icon={<Ruler size={12} />} text={size} />
+        <div className="flex gap-0 flex-wrap flex-col">
+          <section className="leading-0.5">
+            <span className="text-xs SF_Pro_Display_Normal leading-0.5">Size :</span>  <Badge icon={<Ruler size={12} />} text={size} />
           </section>
 
-          <section>
-            <span className="text-xs">Color :</span><Badge
+          <section className="leading-0.5">
+            <span className="text-xs leading-0.5">Color : </span><Badge
               icon={<Palette size={12} />}
               text={color}
             />
@@ -94,7 +94,7 @@ export default function ProductCard({
         {/* Bottom */}
         <div className="flex items-center justify-between mt-2">
           {/* Price */}
-          <div className="flex items-baseline gap-1">
+          <div className="flex items-baseline gap-1 SF_Pro_Display_Bold">
             {price !== undefined && (
               <span className="text-lg font-bold text-gray-900">
                 {(price * quantity).toLocaleString()} so'm
