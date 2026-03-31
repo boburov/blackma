@@ -19,6 +19,16 @@
   src: url(./lib/fonts/montmed.ttf);
 }
 
+@font-face {
+  font-family: Raleway_Extrabold;
+  src: url(./lib/fonts/raleway.extrabold.ttf);
+}
+
+@font-face {
+  font-family: Nunito_Sans_SemiBold;
+  src: url(./lib/fonts/NunitoSans-SemiBold.ttf);
+}
+
 .SF_Pro_Display_Bold {
   font-family: SF_Pro_Display_Bold;
 }
@@ -27,6 +37,14 @@
   font-family: SF_Pro_Display_Normal;
 }
 
-.Montserrat_Regular{
+.Montserrat_Regular {
   font-family: Montserrat_Regular;
+}
+
+.Raleway_Extrabold {
+  font-family: Raleway_Extrabold;
+}
+
+.Nunito_Sans_SemiBold {
+  font-family: Nunito_Sans_SemiBold;
 }
