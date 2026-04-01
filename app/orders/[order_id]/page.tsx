@@ -80,9 +80,9 @@ const Page = () => {
       </section>
 
       <SectionCard title={t("order.payment_details")}>
-        <InfoRow label={t("order.total")} value="12 599 000" />
-        <InfoRow label={t("order.discount")} value="-450 000" highlight="red" />
-        <InfoRow label={t("order.delivery")} value="45 000" />
+        <InfoRow label={t("order.total")} value="12 599 000" showCurrency />
+        <InfoRow label={t("order.discount")} value="-450 000" highlight="red" showCurrency />
+        <InfoRow label={t("order.delivery")} value="45 000" showCurrency />
         <span className="w-full flex border-b border-b-slate-300" />
         <div className="flex justify-between font-bold">
           <span>{t("order.grand_total")}</span>
